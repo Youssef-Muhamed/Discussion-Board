@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+Create New Topic
+{% endblock %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="{% url 'home'%}" class="">Boards</a></li>
+        <li class="breadcrumb-item active">
+          <a href="{% url 'board_topics' board.pk%}" class="">{{board.name}}</a></li>
+        <li class="breadcrumb-item active">New Topic</li>
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" novalidate>
+  {% csrf_token %}
+<!--  <div class="mb-3">-->
+<!--  <label for="exampleFormControlInput1" class="form-label">Subject</label>-->
+<!--  <input type="text" name="subject" class="form-control" id="exampleFormControlInput1">-->
+<!--</div>-->
+<!--<div class="mb-3">-->
+<!--  <label for="exampleFormControlTextarea1" class="form-label">Message</label>-->
+<!--  <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="5"></textarea>-->
+<!--</div>-->
+
+{% include 'includes/form.html' %}
+
+  <div class="">
+    <button type="submit" class="btn btn-primary mb-3 my-2">Add</button>
+  </div>
+</form>
+{% endblock %}
